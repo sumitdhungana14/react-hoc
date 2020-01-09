@@ -8,7 +8,7 @@ const withHover = Component => {
                 hovering: false
             }
        }
-        onHover(event){
+        onHover(){
             this.setState({
                 hovering: true
             })
@@ -22,7 +22,7 @@ const withHover = Component => {
 
         render(){
             return (
-                <div onMouseOver={(event)=>this.onHover(event)} onMouseOut={()=>this.onHoverOver()}>
+                <div onMouseOver={()=>this.onHover()} onMouseOut={()=>this.onHoverOver()}>
                     <Component {...this.props} hovering={this.state.hovering}/>
                 </div>
             )
